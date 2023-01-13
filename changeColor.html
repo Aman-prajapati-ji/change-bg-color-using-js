@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Bg Color</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* background-color:#000; */
+            height:95vh;
+            color:#fff;
+        }
+        h1{
+            font-size: 60px;
+        }
+        span{
+            display: space-between;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="changeBg">Change</button>
+    </div>
+    <script>
+        const button = document.querySelector('button');
+        const body = document.querySelector('body');
+        let colors = ['brown','green','yellow','gray','black','white','pink','orange']
+
+        body.style.backgroundColor = 'pink';
+
+        button.addEventListener("click",cbg)
+
+        function cbg() {
+            let colorIdx = parseInt(Math.random()*colors.length)
+            body.style.backgroundColor = colors[colorIdx];
+        }
+    </script>
+</body>
+</html>
